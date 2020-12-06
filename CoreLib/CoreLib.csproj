@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F053496E-AECF-4C49-9DF8-9786655EF0CE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CoreLib</RootNamespace>
+    <AssemblyName>CoreLib</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Betfair\AppKeyAndSession.cs" />
+    <Compile Include="Betfair\AppKeyAndSessionProvider.cs" />
+    <Compile Include="Betfair\BfMarket.cs" />
+    <Compile Include="Betfair\BfRunner.cs" />
+    <Compile Include="Betfair\IClient.cs" />
+    <Compile Include="Betfair\JsonRpcClient.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Betfair\Json\JsonConvert.cs" />
+    <Compile Include="Betfair\Json\JsonRequest.cs" />
+    <Compile Include="Betfair\Json\JsonResponse.cs" />
+    <Compile Include="Betfair\Json\RescriptRequest.cs" />
+    <Compile Include="Betfair\TO\AccountFundsResponse.cs" />
+    <Compile Include="Betfair\TO\APINGException.cs" />
+    <Compile Include="Betfair\TO\BetStatus.cs" />
+    <Compile Include="Betfair\TO\CancelExecutionReport-Mrt.cs" />
+    <Compile Include="Betfair\TO\CancelInstruction.cs" />
+    <Compile Include="Betfair\TO\CancelInstructionReport.cs" />
+    <Compile Include="Betfair\TO\ClearedOrderSummary.cs" />
+    <Compile Include="Betfair\TO\ClearedOrderSummaryReport.cs" />
+    <Compile Include="Betfair\TO\Competition.cs" />
+    <Compile Include="Betfair\TO\CompetitionResult.cs" />
+    <Compile Include="Betfair\TO\CurrentOrderSummary.cs" />
+    <Compile Include="Betfair\TO\CurrentOrderSummaryReport.cs" />
+    <Compile Include="Betfair\TO\Event.cs" />
+    <Compile Include="Betfair\TO\EventResult.cs" />
+    <Compile Include="Betfair\TO\EventType.cs" />
+    <Compile Include="Betfair\TO\EventTypeResult.cs" />
+    <Compile Include="Betfair\TO\ExBestOffersOverrides.cs" />
+    <Compile Include="Betfair\TO\Exception.cs" />
+    <Compile Include="Betfair\TO\ExchangePrices.cs" />
+    <Compile Include="Betfair\TO\ExecutionReportErrorCode.cs" />
+    <Compile Include="Betfair\TO\ExecutionReportStatus.cs" />
+    <Compile Include="Betfair\TO\GroupBy-Mrt.cs" />
+    <Compile Include="Betfair\TO\InstructionReportErrorCode.cs" />
+    <Compile Include="Betfair\TO\InstructionReportStatus.cs" />
+    <Compile Include="Betfair\TO\ItemDescription.cs" />
+    <Compile Include="Betfair\TO\LimitOnCloseOrder.cs" />
+    <Compile Include="Betfair\TO\LimitOrder.cs" />
+    <Compile Include="Betfair\TO\MarketBettingType.cs" />
+    <Compile Include="Betfair\TO\MarketBook.cs" />
+    <Compile Include="Betfair\TO\MarketCatalogue.cs" />
+    <Compile Include="Betfair\TO\MarketDescription.cs" />
+    <Compile Include="Betfair\TO\MarketFilter.cs" />
+    <Compile Include="Betfair\TO\MarketOnCloseOrder.cs" />
+    <Compile Include="Betfair\TO\MarketProfitAndLoss.cs" />
+    <Compile Include="Betfair\TO\MarketProjection.cs" />
+    <Compile Include="Betfair\TO\MarketSort.cs" />
+    <Compile Include="Betfair\TO\MarketStatus.cs" />
+    <Compile Include="Betfair\TO\MarketTypeResult.cs" />
+    <Compile Include="Betfair\TO\Match.cs" />
+    <Compile Include="Betfair\TO\MatchProjection.cs" />
+    <Compile Include="Betfair\TO\Order.cs" />
+    <Compile Include="Betfair\TO\OrderBy.cs" />
+    <Compile Include="Betfair\TO\OrderProjection.cs" />
+    <Compile Include="Betfair\TO\OrderStatus.cs" />
+    <Compile Include="Betfair\TO\OrderType.cs" />
+    <Compile Include="Betfair\TO\PersistenceType.cs" />
+    <Compile Include="Betfair\TO\PlaceExecutionReport.cs" />
+    <Compile Include="Betfair\TO\PlaceInstruction.cs" />
+    <Compile Include="Betfair\TO\PlaceInstructionReport.cs" />
+    <Compile Include="Betfair\TO\PriceData.cs" />
+    <Compile Include="Betfair\TO\PriceProjection.cs" />
+    <Compile Include="Betfair\TO\PriceSize.cs" />
+    <Compile Include="Betfair\TO\ReplaceExecutionReport.cs" />
+    <Compile Include="Betfair\TO\ReplaceInstruction.cs" />
+    <Compile Include="Betfair\TO\ReplaceInstructionReport.cs" />
+    <Compile Include="Betfair\TO\RollUpModel.cs" />
+    <Compile Include="Betfair\TO\Runner.cs" />
+    <Compile Include="Betfair\TO\RunnerDescription.cs" />
+    <Compile Include="Betfair\TO\RunnerId-Mrt.cs" />
+    <Compile Include="Betfair\TO\RunnerProfitAndLost.cs" />
+    <Compile Include="Betfair\TO\RunnerStatus.cs" />
+    <Compile Include="Betfair\TO\Side.cs" />
+    <Compile Include="Betfair\TO\SortDir.cs" />
+    <Compile Include="Betfair\TO\StartingPrices.cs" />
+    <Compile Include="Betfair\TO\TimeRange.cs" />
+    <Compile Include="Betfair\TO\UpdateExecutionReport.cs" />
+    <Compile Include="Betfair\TO\UpdateInstruction.cs" />
+    <Compile Include="Betfair\TO\UpdateInstructionReport.cs" />
+    <Compile Include="Betfair\TO\Wallet.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
